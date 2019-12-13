@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from decouple import config
-import requests, pprint, random
+import requests, pprint, random, html
 app = Flask(__name__)
 #텔레그램 API
 url = 'https://api.telegram.org'
@@ -35,7 +35,8 @@ def telegram():
             'target' : 'en',
             'format' : 'text'
         }
-        result = requests.post(f'{google_url}?key={google_key}',data).json()['data']['translations'][0]['translatedText']
+        response = requests.post(f'{google_url}?key={google_key}',data).json()
+        result = html.unescape(response['data']['translations'][0]['translatedText'])
     # 그 외의 경우엔 메아리
     else:
         result = message
