@@ -1,0 +1,24 @@
+API 토큰
+1050655874:AAEYMO2oyky9FJjGJpzxaw9a0Bguy2aKaZ4
+
+API 요청주소
+
+내꺼 
+https://api.telegram.org/bot1050655874:AAEYMO2oyky9FJjGJpzxaw9a0Bguy2aKaZ4/getMe
+
+ex) https://api.telegram.org/bot123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11/getMe
+
+[나의 CHAT ID]
+1054856617
+
+[sendMassage 샘플]
+https://api.telegram.org/bot1050655874:AAEYMO2oyky9FJjGJpzxaw9a0Bguy2aKaZ4/sendMessage?chat_id=1054856617&text=금요일좋아
+
+[ngrok 임시주소]
+https://0b316d89.ngrok.io
+
+
+https://api.telegram.org/bot1050655874:AAEYMO2oyky9FJjGJpzxaw9a0Bguy2aKaZ4/setWebhook?url=https://0b316d89.ngrok.io/1050655874:AAEYMO2oyky9FJjGJpzxaw9a0Bguy2aKaZ4
+
+[google API]
+AIzaSyDrTy9sIMPOvXZLffYeW5JlMHuv--XYD_I
