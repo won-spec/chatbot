@@ -56,9 +56,6 @@ def send():
     send_message = requests.get(f'{url}/bot{token}/sendMessage?chat_id={chat_id}&text={message}')
     return render_template('send.html', message = message)
 
-    
-# https://api.telegram.org/bot1050655874:AAEYMO2oyky9FJjGJpzxaw9a0Bguy2aKaZ4/setWebhook?url=https://dnjswntjd.pythonanywhere.com/1050655874:AAEYMO2oyky9FJjGJpzxaw9a0Bguy2aKaZ4
-
 
 if __name__ == '__main__':
     app.run(debug=True)
