@@ -22,6 +22,7 @@ def telegram():
     # 2. 사용자 아이디, 메시지 추출
     chat_id = request.get_json()['message']['chat']['id']
     message = request.get_json()['message']['text']
+    print(request.get_json)
 
     # 사용자가 로또라고 입력하면 로또번호 6개 돌려주기
     if message == '로또':
@@ -37,6 +38,9 @@ def telegram():
         }
         response = requests.post(f'{google_url}?key={google_key}',data).json()
         result = html.unescape(response['data']['translations'][0]['translatedText'])
+    # 날씨를 알아볼까
+
+
     # 그 외의 경우엔 메아리
     else:
         result = message
@@ -46,15 +50,15 @@ def telegram():
     return '', 200
 
 
-@app.route('/write')
-def write():
-    return render_template('write.html')
+# @app.route('/write')
+# def write():
+#     return render_template('write.html')
 
-@app.route('/send')
-def send():
-    message = request.args.get('message')
-    send_message = requests.get(f'{url}/bot{token}/sendMessage?chat_id={chat_id}&text={message}')
-    return render_template('send.html', message = message)
+# @app.route('/send')
+# def send():
+#     message = request.args.get('message')
+#     send_message = requests.get(f'{url}/bot{token}/sendMessage?chat_id={chat_id}&text={message}')
+#     return render_template('send.html', message = message)
 
 
 if __name__ == '__main__':
